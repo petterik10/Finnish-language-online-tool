@@ -19,12 +19,64 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/mbossed.png");
 }
 
+@mixin table {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #3d3c3c;
+  background-color: rgb(32, 32, 43);
+  position: absolute;
+}
+
 .container {
-  height: 100vh;
+  display: grid;
+  /*   grid-template-columns: repeat(100px);
+  grid-template-rows: repeat(36, 100px); */
+  /* height: 100vh; */
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+
+  &__inner {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__table {
+    &--14 {
+      @include table;
+      top: 50px;
+      left: 200px;
+    }
+    &--21 {
+      @include table;
+      top: 50px;
+      right: 200px;
+    }
+
+    &--50 {
+      @include table;
+      bottom: 50px;
+      left: 200px;
+    }
+    &--57 {
+      @include table;
+      bottom: 50px;
+      right: 200px;
+    }
+  }
+
+  &__tableWrapper {
+    height: 85%;
+    border: 5px solid rgb(85, 6, 6);
+    margin: 10px;
+  }
+
+  &__tableWrapperInner {
+    background-color: rgb(150, 150, 170);
+    height: 100%;
+  }
 }
+
 
 @mixin newLine($position: absolute, $display: block, $content: "") {
   position: $position;

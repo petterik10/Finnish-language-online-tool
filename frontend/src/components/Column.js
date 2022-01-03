@@ -1,8 +1,9 @@
 import Character from "./Character";
+import SingleColumn from "./SingleColumn";
 function Column({ elem, currentColumn }) {
   return (
-    <div>
-      {elem === currentColumn ? <Character /> : <div> </div>}
+    <div className="container__inner">
+      {elem === currentColumn ? <Character /> : <SingleColumn elem={elem} />}
     </div>
   );
 }
